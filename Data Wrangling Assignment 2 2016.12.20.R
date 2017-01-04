@@ -3,6 +3,8 @@
 library(dplyr)
 library(tidyr)
 df<- read.csv("titanic_original.csv", header=TRUE)
+summary(df)
+
 #1 convert factor to character 
 df$embarked <- as.character(df$embarked)
 #make change to the characters 
@@ -13,6 +15,13 @@ df$embarked <- as.factor(df$embarked)
 select(df, embarked) %>% 
   group_by(embarked) %>% 
   tally()
+
+filter(df, df$embarked == C)
+df[df$embarked == "C"]
+df[embarked == C]
+df = df[df$embarked == "C"]
+df[df$embarked == C]
+
 #calculate mean age
 mean(df$age, na.rm = TRUE)
 ----
